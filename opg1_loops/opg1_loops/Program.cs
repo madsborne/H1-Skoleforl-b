@@ -18,6 +18,10 @@ namespace opg1_loops
                     Console.WriteLine(i); 
                 }
             }
+            for (int j = 100; j >= 0; j--)
+            {
+                Console.WriteLine(j);
+            }
         }
     }
 }
