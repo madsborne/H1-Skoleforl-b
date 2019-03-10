@@ -8,6 +8,8 @@ namespace OopPlanets
 {
     class Planet
     {
+        // all my private vars
+        private string name;
         private double mass;
         private double diamenter;
         private int density;
@@ -17,10 +19,22 @@ namespace OopPlanets
         private double distanceFromSun;
         private double orbitalPeriod;
         private double orbitalVelocity;
-        private uint meanTemperature;
+        private double meanTemperature;
         private byte numberOfMoons;
         private bool ringSystem;
 
+        // all my props
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         public double Mass
         {
             get
@@ -122,7 +136,7 @@ namespace OopPlanets
                 orbitalVelocity = value;
             }
         }
-        public uint MeanTemperature
+        public double MeanTemperature
         {
             get
             {
@@ -157,12 +171,40 @@ namespace OopPlanets
             }
         }
 
-        static List<string> planets = new List<string>();
-
-        public void AddPlanet()
+        // my con that asign values to the props
+        public Planet(string pName, double pMass, double pDiameter, int pDensity, double pGravity, double pRotationPeriod, double pLengthOfDay, double pDistanceFromSun, double pOrbitalPeriod, double pOrbitalVelocity, double pMeanTemperature, byte pNumberOfMoons, bool pRingSystem)
         {
-
+            Name = pName;
+            Mass = pMass;
+            Diameter = pDiameter;
+            Density = pDensity;
+            Gravity = pGravity;
+            RotationPeriod = pRotationPeriod;
+            LengthOfDay = pLengthOfDay;
+            DistanceFromSun = pDistanceFromSun;
+            OrbitalPeriod = pOrbitalPeriod;
+            OrbitalVelocity = pOrbitalVelocity;
+            MeanTemperature = pMeanTemperature;
+            NumberOfMoons = pNumberOfMoons;
+            RingSystem = pRingSystem;
         }
 
+        // returns the planets info
+        public string PrintInfo()
+        {
+            return $"Name = {Name}\n" +
+                   $"Mass = {Mass}\n" +
+                   $"Diameter = {Diameter}\n" +
+                   $"Density = {Density}\n" +
+                   $"Gravity = {Gravity}\n" +
+                   $"Rotation Period = {RotationPeriod}\n" +
+                   $"Length Of Day = {LengthOfDay}\n" +
+                   $"Distrance From Sun = {DistanceFromSun}\n" +
+                   $"Orbital Period = {OrbitalPeriod}\n" +
+                   $"Orbital Velocity = {OrbitalVelocity}\n" +
+                   $"Mean Temperature = {MeanTemperature}\n" +
+                   $"Number of Moons = {NumberOfMoons}\n" +
+                   $"Ring System = {RingSystem}\n";
+        }
     }
 }

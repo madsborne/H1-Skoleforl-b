@@ -17,7 +17,7 @@ namespace metoder_files
                 Console.WriteLine("1 : He shot first - StarWars");
                 Console.WriteLine("2 : Delete the file from He Shot first");
                 Console.WriteLine("3 : Create starwars folders and txt files");
-                Console.WriteLine("4 : Create ");
+                Console.WriteLine("4 : Delete the Folder from menu pick 3");
                 Console.WriteLine(Menu(Console.ReadLine()));
 
             }
@@ -38,7 +38,7 @@ namespace metoder_files
                     returnedString = CreateFolder();
                     break;
                 case "4":
-                    returnedString = DeleteFile();
+                    returnedString = DeleteFolder();
                     break;
                 case "5":
                     LookUp();
@@ -98,6 +98,16 @@ namespace metoder_files
             }
         }
 
+        static string CreateStreamFile()
+        {
+            FileStream stream = new FileStream(@".\Movies.txt", FileMode.Create);
+            StreamReader reader = new StreamReader(stream);
+
+
+            return "";
+        }
+
+
         static void TestMethod()
         {
             // Testing of GetFiles
@@ -124,6 +134,20 @@ namespace metoder_files
                 Console.WriteLine(files[i]);
             }
             */
+
+            FileStream stream = new FileStream(@".\Starwars.txt", FileMode.Open);
+            StreamReader reader = new StreamReader(stream);
+            StreamWriter writer = new StreamWriter(stream);
+            string fileRead = reader.ReadToEnd();
+
+            while (!reader.EndOfStream)
+            {
+                string fileLine = reader.ReadLine();
+                Console.WriteLine(fileLine);
+            }
+
+            reader.Close();
+
         }
     }
 }
