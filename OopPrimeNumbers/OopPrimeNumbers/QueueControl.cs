@@ -8,8 +8,10 @@ namespace OopPrimeNumbers
 {
     class QueueControl
     {
+        // creating a queue called primeNumbers
         Queue<int> primeNumbers = new Queue<int>();
 
+        // adding prime numbers into the que in the con
         public QueueControl()
         {
             primeNumbers.Enqueue(2);
@@ -19,6 +21,9 @@ namespace OopPrimeNumbers
             primeNumbers.Enqueue(11);
         }
 
+        /// <summary>
+        /// method that displays the numbers that are in the queue 
+        /// </summary>
         public void PrimeNumberPrint()
         {
             while (primeNumbers.Count > 0)
