@@ -33,7 +33,14 @@ namespace OopFifo
         // Finds the first and last item in the queue 
         public string FindMinMaxItems()
         {
-            return $"Min -> {queueItems.First().ItemName} - Max -> {queueItems.Last().ItemName}";
+            if (queueItems.Count == 0)
+            {
+                return "No items in queue";
+            }
+            else
+            {
+                return $"Min -> {queueItems.First().ItemName} - Max -> {queueItems.Last().ItemName}";
+            }
         }
     }
 }
