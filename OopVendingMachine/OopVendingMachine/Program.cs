@@ -12,7 +12,11 @@ namespace OopVendingMachine
         {
             VendingMachine vending = new VendingMachine();
 
-            
+            // Testing
+            foreach (Candy candy in vending.vendingSlots[0])
+            {
+                Console.WriteLine(candy.Name);
+            }
         }
     }
 }

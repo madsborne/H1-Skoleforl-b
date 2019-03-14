@@ -12,7 +12,23 @@ namespace GumMachine
         {
             House myHouse = new House();
 
-            myHouse.PrintInfo();
+            while (true)
+            {
+                Console.WriteLine("Welcome to the Gum Dispenser");
+                Console.WriteLine("1: Pull the lever to get a piece of gum");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        myHouse.PrintInfo();
+                        break;
+
+                    default:
+                        break;
+                } 
+            }
         }
+
+        
     }
 }

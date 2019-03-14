@@ -27,6 +27,7 @@ namespace OopVendingMachine
             Name = candyName;
             Price = candyPrice;
             Size = candySize;
+            Id = 0;
         }
 
     }

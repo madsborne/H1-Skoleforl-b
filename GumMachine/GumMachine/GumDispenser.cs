@@ -22,10 +22,6 @@ namespace GumMachine
             }
         }
 
-        // objs
-
-
-        // List
         public List<Gum> gumList = new List<Gum>();
         public Random rnd = new Random();
         public GumDispenser()

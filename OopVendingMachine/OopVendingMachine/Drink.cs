@@ -27,6 +27,7 @@ namespace OopVendingMachine
             Name = drinkName;
             Price = drinkPrice;
             Liter = drinkLiter;
+            Id = 1;
         }
 
     }

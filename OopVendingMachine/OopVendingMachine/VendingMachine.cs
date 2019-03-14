@@ -16,15 +16,15 @@ namespace OopVendingMachine
 
         Candy candy;
         Drink drink;
+        Product temp;
 
         private int moneyBox = 0;
+        private int returnMoney = 0;
+        private bool buyComplete = false;
 
         public VendingMachine()
         {
-            for (int i = 0; i < 6; i++)
-            {
-                vendingSlots.Add(slots = new Stack<Product>());
-            }
+            
             FillProduct();
         }
 
@@ -50,6 +50,11 @@ namespace OopVendingMachine
 
         public void FillProduct()
         {
+            for (int i = 0; i < 6; i++)
+            {
+                vendingSlots.Add(slots = new Stack<Product>());
+            }
+
             for (int i = 0; i < vendingSlots.Count; i++)
             {
                 switch (i)

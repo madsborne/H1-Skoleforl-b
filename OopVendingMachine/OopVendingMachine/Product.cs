@@ -10,6 +10,7 @@ namespace OopVendingMachine
     {
         private string name;
         private int price;
+        private int id;
 
         public string Name
         {
@@ -31,6 +32,18 @@ namespace OopVendingMachine
             set
             {
                 price = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
             }
         }
 
