@@ -12,11 +12,14 @@ namespace OopVendingMachine
         {
             VendingMachine vending = new VendingMachine();
 
-            // Testing
-            foreach (Candy candy in vending.vendingSlots[0])
+            string loginPass = "";
+            int userMoney = 0;
+
+            while (true)
             {
-                Console.WriteLine(candy.Name);
+                
             }
+            
         }
     }
 }
