@@ -8,21 +8,23 @@ namespace OopVendingMachine
 {
     class VendingMachine
     {
-        Stack<Product> slots;
+        private Stack<Product> slots;
+        private List<Stack<Product>> vendingSlots = new List<Stack<Product>>();
+        private List<Candy> removedCandies = new List<Candy>();
+        private List<Drink> removedDrinks = new List<Drink>();
 
-        public List<Stack<Product>> vendingSlots = new List<Stack<Product>>();
-        public List<Candy> removedCandies = new List<Candy>();
-        public List<Drink> removedDrinks = new List<Drink>();
-
-        Candy candy;
-        Drink drink;
-        Product temp;
+        private Candy candy;
+        private Drink drink;
+        private Product temp;
 
         private int moneyBox = 0;
         private int returnMoney = 0;
         private bool buyComplete = false;
         private string returnString = "";
 
+        /// <summary>
+        /// when created it fills the vendingmachine because of the FillProduct(); method
+        /// </summary>
         public VendingMachine()
         {
 
@@ -224,6 +226,20 @@ namespace OopVendingMachine
             }
 
             return returnString;
+        }
+
+        public string PrintProducts()
+        {
+            returnString = "";
+
+            for (int i = 0; i < vendingSlots.Count; i++)
+            {
+                returnString = $"ID - {i} \n" +
+                    $"Name - {vendingSlots[i].Peek().Name}\n" +
+                    $"P"; 
+            }
+
+            return "";
         }
     }
 }
