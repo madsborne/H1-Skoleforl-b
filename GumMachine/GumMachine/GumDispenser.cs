@@ -22,8 +22,10 @@ namespace GumMachine
             }
         }
 
+        // list + random number
         public List<Gum> gumList = new List<Gum>();
         public Random rnd = new Random();
+
         public GumDispenser()
         {
             // adds blue berries to the gumList
@@ -47,6 +49,11 @@ namespace GumMachine
             CheckCount();
         }
 
+        /// <summary>
+        /// Creates Gum depending on Id of the gum and amount
+        /// </summary>
+        /// <param name="gumId"></param>
+        /// <param name="rndNumber"></param>
         public void CreateGum(int gumId, int rndNumber)
         {
             for (int gumAdding = 0; gumAdding < rndNumber; gumAdding++)
@@ -54,8 +61,13 @@ namespace GumMachine
                 Gum gum = new Gum(gumId);
                 gumList.Add(gum);
             }
-        }
 
+        }
+        /// <summary>
+        /// Checks the count in the dispenser and fills it or removes
+        /// if used with below 55 it fills
+        /// if used in the constructer and above 55 it removes
+        /// </summary>
         public void CheckCount()
         {
             TotalNumber = gumList.Count;
@@ -67,10 +79,11 @@ namespace GumMachine
             }
             while (TotalNumber > 55)
             {
-                gumList.RemoveAt(rnd.Next(0,56));
+                gumList.RemoveAt(rnd.Next(0, 56));
                 TotalNumber--;
             }
-            
+
         }
+
     }
 }
