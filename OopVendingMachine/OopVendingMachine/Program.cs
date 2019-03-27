@@ -14,11 +14,7 @@ namespace OopVendingMachine
             VendingMachine vending = new VendingMachine();
 
             // vars
-            bool poweringOn = true;
-            bool adminLogin = false;
-            string loginPass = "";
             string userInput = "";
-            int timer = 0;
             int productID = 0;
             int userMoney = 0;
 
